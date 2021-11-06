@@ -1,0 +1,30 @@
+extends top-layout.pug
+//- extends를 사용하려면 block으로 나눠서 넣어야함
+block content
+  header 메인 페이지 
+  nav
+    ul
+      li
+        a(href="./books") 도서
+      li
+        a(href="./basket") 장바구니
+      li
+        a(href="./order") 주문
+      li
+        a(href="./signUp") 로그인
+  section
+    article 
+      p 로그인 정보
+      div
+        p 아이디
+        p 이름
+        p 주소
+        a(href="./signUp") 로그인 하러가기
+    article
+      p 도서 정보
+      a(href="./books") 도서 보러가기
+      p 주문 조회
+    article
+      p 장바구니
+      a(href="./basket") 장바구니 보러가기
+

@@ -1,12 +1,24 @@
 //express 로드 , 이를 통해 express 모듈을 제어한다.
 const express = require("express");
+const path = require("path");
+const db = require("./lib/db.js");
 const app = express();
+
 //포트 지정
 const port = 3000;
 //route를 분리한 것을 가져옴
 const route = require("./route.js");
+
+//뷰 엔진 pug 로 지정
+app.set("view engine", "pug");
+app.set("views", path.join(__dirname, "view"));
+app.use(express.static(path.join(__dirname, "view")));
+
 //route 가져오기
 app.use("/", route);
+
+//db 실행
+db.connect();
 
 app.use((req, res, next) => {
   console.log("안녕!");

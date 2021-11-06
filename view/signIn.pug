@@ -1,0 +1,50 @@
+extends top-layout.pug
+//- extends를 사용하려면 block으로 나눠서 넣어야함
+block content
+    header 회원가입 페이지
+     
+    a(href="/")  메인으로 이동 
+    form
+        h4 아이디 입력 정보
+
+        label 이름 : 
+        input(type="text" name="name") 
+        br
+
+        label 아이디 : 
+        input(type="text" name="id")
+        br
+
+        label 비밀번호 :
+        input(type="password" name="password")
+        br
+        
+        h4 배송지 입력 정보
+        label 배송지 우편번호 :
+        input(type="text" name="zip-code") 
+        br
+
+        label 배송지 기본주소 : 
+        input(type="text" name="addr")
+        br
+
+        label 배송지 상세주소 :
+        input(type="text" name="detail-addr") 
+        br
+
+        h4 신용카드 입력 정보
+        label 신용카드 번호 :
+        input(type="text" name="card-num") 
+        br
+
+        label 신용카드 유효기간 : 
+        input(type="date" name="card-valid-date") 
+        br
+
+        label 신용카드 종류 : 
+        input(type="text" name="card-type")
+        br
+
+        input(type="submit" value="제출") 
+        br
+

@@ -1,0 +1,38 @@
+header {
+    width: 100%;
+    height: 70px;
+    background-color: blanchedalmond;
+    text-align: center;
+    font-size: 40px;
+}
+
+ul {
+    display: flex;
+    text-align: center;
+    gap: 30px;
+}
+
+li {
+    height: 100px;
+    width: 100%;
+    border: solid black 1px;
+    border-radius: 10px;
+}
+
+section {
+    margin: 100px;
+    display: flex;
+    text-align: center;
+    gap: 30px;
+}
+
+article {
+    width: 100%;
+    background-color: blanchedalmond;
+}
+
+footer {
+    width: 100%;
+    height: 20%;
+    background-color: blanchedalmond;
+}
