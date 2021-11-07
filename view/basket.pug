@@ -5,8 +5,12 @@ block content
     a(href="/") 메인으로 이동
 
     h1 장바구니 목록
-    h2 장바구니 생성일자
-    div 
-        p 도서 목록
-        p 도서 가격
-        p 도서 수량
+    h4 장바구니 생성일자
+    p=basket_date
+    -for (const i in basketList )
+        -const [bookNum , bookName , amount] = [basketList[i].book_num, basketList[i].book_name, basketList[i].book_amount ]
+        div#book
+            p 도서 번호 : #{bookNum} /
+            p 도서 제목 : #{bookName} /
+            p 도서 수량 : #{amount} / 
+            

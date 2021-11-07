@@ -1,11 +1,28 @@
 extends top-layout.pug
+
 //- extends를 사용하려면 block으로 나눠서 넣어야함
 block content
     header 도서 페이지 
     a(href="/") 메인으로 이동
-    h1 도서 제목
-    div
-        p 도서 페이지
-        p 도서 재고량
-        p 도서 판매가
+    h1 도서
+    div#search-wrapper
+        input(type="text")
+        input(type="button",id="search",value="검색")
+    div#book-wrapper
+        -for (let i in bookList )
+            -const [num,name,price,stock] = [bookList[i].book_num ,bookList[i].book_name ,bookList[i].book_price ,bookList[i].book_stock]
+            div#book
+                form(method="post")
+                    input(type="text",readOnly,name="book_num",value=num)
+                    label 도서명 : 
+                    input(type="text",readOnly,name="book_name",value=name)
+                    label 도서 가격 : 
+                    input(type="text",readOnly,name="book_price",value=price)
+                    label 도서 재고량 : 
+                    input(type="text",readOnly,name="book_stock",value=stock)
+                    label 수량 입력 : 
+                    input(type="number",min="0",max=stock,name="amount",required)
+                    input(type="submit",value="장바구니 추가")
+                    input(type="submit",value="바로 주문")
+        
 

@@ -1,5 +1,6 @@
 extends top-layout.pug
 //- extends를 사용하려면 block으로 나눠서 넣어야함
+
 block content
   header 메인 페이지 
   nav
@@ -11,19 +12,31 @@ block content
       li
         a(href="./order") 주문
       li
-        a(href="./signUp") 로그인
+        if isloggedIn
+          p 로그아웃
+          a(href="./logout") 로그아웃 하기
+        else
+          p 로그인
+          a(href="./signUp") 로그인 하기
   section
-    article 
-      p 로그인 정보
-      div
-        p 아이디
-        p 이름
-        p 주소
-        a(href="./signUp") 로그인 하러가기
+    article
+      if isloggedIn
+        p=userMessage
+        p=grade
+      else
+        p=userMessage
+        a(href="./signUp")
+      - let admin = grade === "admin" ? true : false
+      if admin
+        a(href="./manager") 도서 추가하러가기
     article
       p 도서 정보
       a(href="./books") 도서 보러가기
-      p 주문 조회
+      if isloggedIn
+        p 주문조회
+        a(href="./order") 주문조회 하러가기
+      else
+        p=userMessage
     article
       p 장바구니
       a(href="./basket") 장바구니 보러가기

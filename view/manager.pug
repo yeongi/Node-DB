@@ -1,0 +1,12 @@
+extends top-layout.pug
+//- extends를 사용하려면 block으로 나눠서 넣어야함
+block content
+  header 관리자 페이지 (관리자)
+  form(method="post")
+    label 도서명 : 
+    input(type="text",name="bookName" required)
+    label 재고량 : 
+    input(type="number",name="bookStock" required)
+    label 가격 : 
+    input(type="number",name="bookPrice" required)
+    input(type="submit", value="제출")
