@@ -8,8 +8,6 @@ const crypto = require('crypto');
 const FileStore = require('session-file-store')(session); // 세션을 파일에 저장
 const cookieParser = require('cookie-parser');
 const app = express();
-const fs = require('fs');
-
 
 //포트 지정
 const port = 3000;

@@ -77,10 +77,15 @@ router.get("/basket", (req, res) => {
           date = result[0].basket_date;
           db.connection.query('select * from book_basket where basket_num=?',[result[0].basket_num] , (err,result)=>{
             if(err) throw err;
+            
             if(result.length > 0){
               res.render("basket",{
                 basket_date : date ,
                 basketList : result});
+            }else{
+              res.render("basket",{
+                basket_date : date
+              })
             }
           });
         });
