@@ -69,7 +69,6 @@ router.get("/basket", (req, res) => {
         db.connection.query('insert into basket (user_num,basket_date) values(?,?)',[
           usernum ,new Date()
         ]);
-        res.render("index", { userMessage: "장바구니 생성 완료" });
       }else{
         console.log("장바구니 보여주기");
         db.connection.query('select * from basket where user_num=?',[usernum] , (err,result)=>{
@@ -111,7 +110,7 @@ router.post("/books", (req, res) => {
         db.connection.query('insert into basket (user_num,basket_date) values(?,?)',[
           usernum ,new Date()
         ]);
-        res.render("basket",{basket_date : new Date()});
+        res.send('<script>alert("장바구니 생성됨");window.open("basket")</script>');
       }else{
         console.log("장바구니 추가완료");
         //유저 넘버로 장바구니 찾기
