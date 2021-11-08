@@ -13,6 +13,7 @@ block content
             -const [num,name,price,stock] = [bookList[i].book_num ,bookList[i].book_name ,bookList[i].book_price ,bookList[i].book_stock]
             div#book
                 form(method="post")
+                    label 번호 :
                     input(type="text",readOnly,name="book_num",value=num)
                     label 도서명 : 
                     input(type="text",readOnly,name="book_name",value=name)

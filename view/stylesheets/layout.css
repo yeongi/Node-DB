@@ -1,67 +1,99 @@
 #wrapper {
-    width: 80%;
-    height: auto;
-    padding: 100px;
-    text-align: center;
+  width: 80%;
+  height: auto;
+  padding: 100px;
+  text-align: center;
 }
 #book-wrapper {
-    background-color: antiquewhite;
-    text-align: center;
-    padding: 30px;
+  background-color: antiquewhite;
+  text-align: center;
+  padding: 30px;
 }
 #search-wrapper {
-    margin: 10px;
-    padding: 10px;
+  margin: 10px;
+  padding: 10px;
 }
 #book {
-    display: flex;
-    height: 100px;
+  display: flex;
+  height: 100px;
 }
 #book input {
-    width: auto;
-    margin: 10px;
-    height: 50px;
+  width: 100px;
+  margin: 10px;
+  height: 50px;
 }
 
 #book p {
-    flex-direction: column;
+  flex-direction: column;
+}
+
+#order-wrapper {
+  display: flex;
+  width: 100%;
+  gap: 10;
+  height: auto;
+  text-align: center;
+  background-color: antiquewhite;
+  flex-direction: column;
+}
+
+#orderform {
+  width: 40%;
+}
+
+#book-order-wrapper {
+  display: inline;
+  width: 100%;
+  height: auto;
+}
+
+#order-book {
+  text-align: center;
+  display: flex;
+}
+
+#order-book p {
+  flex-grow: 1;
+  width: auto;
+  font-weight: bold;
+  padding-right: 30px;
 }
 
 header {
-    width: 100%;
-    height: 70px;
-    background-color: blanchedalmond;
-    text-align: center;
-    font-size: 40px;
+  width: 100%;
+  height: 70px;
+  background-color: blanchedalmond;
+  text-align: center;
+  font-size: 40px;
 }
 
 ul {
-    display: flex;
-    text-align: center;
-    gap: 30px;
+  display: flex;
+  text-align: center;
+  gap: 30px;
 }
 
 li {
-    height: 100px;
-    width: 100%;
-    border: solid black 1px;
-    border-radius: 10px;
+  height: 100px;
+  width: 100%;
+  border: solid black 1px;
+  border-radius: 10px;
 }
 
 section {
-    margin: 100px;
-    display: flex;
-    text-align: center;
-    gap: 30px;
+  margin: 100px;
+  display: flex;
+  text-align: center;
+  gap: 30px;
 }
 
 article {
-    width: 100%;
-    background-color: blanchedalmond;
+  width: 100%;
+  background-color: blanchedalmond;
 }
 
 footer {
-    width: 100%;
-    height: 20%;
-    background-color: blanchedalmond;
+  width: 100%;
+  height: 20%;
+  background-color: blanchedalmond;
 }

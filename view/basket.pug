@@ -3,14 +3,21 @@ extends top-layout.pug
 block content
     header 장바구니 페이지 
     a(href="/") 메인으로 이동
+    br
+    a(href="books") 책 고르기   
 
     h1 장바구니 목록
     h4 장바구니 생성일자
+    a(href="order") 주문 하기  
     p=basket_date
     -for (const i in basketList )
-        -const [bookNum , bookName , amount] = [basketList[i].book_num, basketList[i].book_name, basketList[i].book_amount ]
+        -const [basket, bookNum , bookName , bookPrice, amount] = [basketList[i].basket_num, basketList[i].book_num, basketList[i].book_name, basketList[i].book_price ,basketList[i].book_amount ]
         div#book
+            p 장바구니 번호 : #{basket} /
             p 도서 번호 : #{bookNum} /
             p 도서 제목 : #{bookName} /
-            p 도서 수량 : #{amount} / 
+            p 도서 단가 : #{bookPrice} /
+            p 주문 수량 : #{amount} /
+
+      
             

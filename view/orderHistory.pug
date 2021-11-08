@@ -1,0 +1,22 @@
+extends top-layout.pug
+//- extends를 사용하려면 block으로 나눠서 넣어야함
+block content
+    header 주문 내역 페이지 
+    a(href="/") 메인으로 이동
+    -for (const i in history )
+      //- -const [user_num,order_zip_code, order_default_addr, order_card_num, order_card_valid_date, order_card_type, order_total, book_order_amount, book_order_price, book_name, book_price ]
+      div#book
+        p 주문 번호 : #{history[i].order_num}
+        p 유저 번호 : #{history[i].user_num} /
+        p 우편 번호 : #{history[i].order_zip_code} /
+        p 기본 주소 : #{history[i].order_default_addr} /
+        p 카드 번호 : #{history[i].order_card_num} /
+        p 카드 유효기간 : #{history[i].order_card_valid_date} /
+        p 카드 종류 : #{history[i].order_card_type} /
+        p 주문 총액 : #{history[i].order_total} /
+        p 주문 수량 : #{history[i].book_order_amount} /
+        p 주문 액 : #{history[i].book_order_price} /
+        p 도서 명 : #{history[i].book_name} /
+        p 도서 가격 : #{history[i].book_price}
+
+        
